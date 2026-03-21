@@ -13,6 +13,8 @@ A cutting-edge customer support system powered by AI agents using CrewAI and Str
 - **📝 Chat History**: Maintains conversation history for context and reference
 - **⚡ Real-time Processing**: Quick response generation with OpenAI's GPT-4 models
 
+https://github.com/user-attachments/assets/037b34d1-6607-4242-9d81-47847b3b3573
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -154,4 +156,4 @@ For issues, questions, or suggestions, please open an issue on GitHub or contact
 
 ---
 
-**Made with ❤️ | © 2026 Customer Support Automation**
+**Made with ❤️ | © 2025 Customer Support Automation**
