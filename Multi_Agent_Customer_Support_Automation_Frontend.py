@@ -1,19 +1,12 @@
-import sys
 import os
-
-# Replace 'venv' with your actual venv directory name if different
-venv_path = os.path.join(os.path.dirname(__file__), "venv", "Lib", "site-packages")
-if venv_path not in sys.path:
-    sys.path.insert(0, venv_path)
 
 import streamlit as st
 from crewai import Agent, Task, Crew
 from crewai_tools import ScrapeWebsiteTool
-import os
+from dotenv import load_dotenv
 
-# Set the OpenAI API key as an environment variable
-if not os.getenv("OPENAI_API_KEY"):
-    raise EnvironmentError("OPENAI_API_KEY is not set. Please set it before running the app.")
+# Load variables from .env when present
+load_dotenv()
 
 os.environ.setdefault("OPENAI_MODEL_NAME", "gpt-4o-mini")
 
@@ -99,6 +92,10 @@ crew = Crew(
 def main():
     st.set_page_config(page_title="Customer Support", layout="centered")
     st.title("Customer Support 📞")
+
+    if not os.getenv("OPENAI_API_KEY"):
+        st.error("OPENAI_API_KEY is not set. Add it to your environment or .env file before running the app.")
+        st.stop()
 
     if "history" not in st.session_state:
         st.session_state["history"] = []

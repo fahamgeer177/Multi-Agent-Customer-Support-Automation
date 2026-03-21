@@ -17,7 +17,7 @@ A cutting-edge customer support system powered by AI agents using CrewAI and Str
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - OpenAI API key
 
 ### Installation
@@ -28,11 +28,21 @@ A cutting-edge customer support system powered by AI agents using CrewAI and Str
    cd Multi-Agent-Customer-Support-Automation
    ```
 
-2. **Create a virtual environment**
+2. **Create and activate a virtual environment**
    ```bash
    python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
+
+    Activate it:
+
+    - On Windows (PowerShell):
+       ```powershell
+       .\venv\Scripts\Activate.ps1
+       ```
+    - On macOS/Linux:
+       ```bash
+       source venv/bin/activate
+       ```
 
 3. **Install dependencies**
    ```bash
@@ -41,7 +51,7 @@ A cutting-edge customer support system powered by AI agents using CrewAI and Str
 
 4. **Set up environment variables**
    
-   Create a `.env` file in the project root:
+   Create a `.env` file in the project root (or copy `.env.example`):
    ```
    OPENAI_API_KEY=your_api_key_here
    OPENAI_MODEL_NAME=gpt-4o-mini
@@ -67,11 +77,12 @@ Then:
 ## 🏗️ Project Structure
 
 ```
-Customer-Support/
-├── Multi_Agent_Customer_Support_Automation_Frontend.py  # Main Streamlit application
-├── requirements.txt                                      # Project dependencies
-├── README.md                                            # This file
-└── .env                                                 # Environment variables (add to .gitignore)
+Multi-Agent-Customer-Support-Automation/
+├── Multi_Agent_Customer_Support_Automation_Frontend.py  # Main Streamlit app
+├── requirements.txt                                      # Python dependencies
+├── README.md                                             # Project documentation
+├── .gitignore                                            # Ignored local/secrets files
+└── .env                                                  # Local environment variables (not committed)
 ```
 
 ## 🔧 How It Works
@@ -95,7 +106,6 @@ Customer-Support/
 
 ⚠️ **Important Security Notes:**
 - Never commit your `.env` file with API keys
-- Add `.env` and `.gitignore` to your repository
 - Use environment variables for all sensitive information
 - Rotate your API keys periodically
 
