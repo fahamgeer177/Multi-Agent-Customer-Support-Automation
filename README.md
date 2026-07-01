@@ -1,18 +1,20 @@
 # 🤖 Multi-Agent Customer Support Automation
 
-A cutting-edge customer support system powered by AI agents using CrewAI and Streamlit. This application leverages multiple AI agents to provide intelligent, comprehensive, and high-quality responses to customer inquiries.
+An autonomous, multi-agent orchestration framework designed to handle complex customer support inquiries while maintaining strict algorithmic safety, factual verification, and cooperative agent governance using CrewAI and Streamlit. 
 
-## 🌟 Features
+This architecture demonstrates how to build robust guardrails into LLM-driven pipelines by separating task execution from quality assurance and alignment verification.
 
-- **🧠 Multi-Agent System**: Utilizes multiple AI agents working together for optimal customer support
-  - **Senior Support Representative**: Handles initial inquiry resolution with comprehensive answers
-  - **Quality Assurance Specialist**: Reviews and ensures high-quality support responses
-  
-- **🌐 Web Scraping Capabilities**: Automatically gathers relevant information from knowledge bases
-- **💬 Interactive Chat Interface**: User-friendly Streamlit-based interface for seamless customer interactions
-- **📝 Chat History**: Maintains conversation history for context and reference
-- **⚡ Real-time Processing**: Quick response generation with OpenAI's GPT-4 models
+## 🛡️ AI Safety & Agent Governance
 
+While scaling autonomous systems, execution capabilities must be balanced with alignment guardrails. This project implements critical governance mechanisms to prevent cascading agent failures and mitigate hallucinations:
+
+- **🧠 Cooperative Multi-Agent Verification**: Utilizes a dual-agent state machine designed for auditable intelligence.  
+  - **Senior Support Representative**: Acts as the primary execution agent, navigating user intent and generating comprehensive solutions.  
+  - **Quality Assurance Specialist**: Acts as the deterministic alignment guardrail. It independently reviews the Support Agent's output against factual baselines, ensuring high-quality, safe, and aligned responses before user delivery.
+- **🌐 Grounded Retrieval Strategy**: Automatically gathers relevant context from bounded knowledge bases (via controlled web scraping) to ground the agents, explicitly mitigating parametric LLM hallucinations.
+- **💬 Auditable State Management**: Maintains immutable conversation history and agent hand-off logs for context tracing and reference.
+- **⚡ Deterministic Execution**: Leverages OpenAI's GPT-4 models with strictly defined system prompts and role-playing bounds to prevent prompt injection and drift.
+- 
 https://github.com/user-attachments/assets/037b34d1-6607-4242-9d81-47847b3b3573
 
 ## 🚀 Getting Started
